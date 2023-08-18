@@ -37,4 +37,8 @@ String decrypted = AES256.decrypt("복호화할 문자열");
 ```java
 String decrypted = AES256.decryptFromFile("파일 경로");
 ```
-
+#### encryptFromFile
+평문 파일 경로를 입력받아 암호화하여 반환하는 함수
+```java
+String encrypted = AES256.encryptFromFile("파일 경로");
+```
