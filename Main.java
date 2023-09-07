@@ -26,10 +26,9 @@ public class Main {
         System.out.println(decrypted);
         System.out.println("==========================================================================================");
 
-        Path of = Path.of("");
+        String currentPath = Paths.get(System.getProperty("user.dir")).toString();
         try {
             // 암호화된 text 파일(을 읽어서 복호화 하는 예시
-            String currentPath = of.toAbsolutePath().toString();
             String filePath = Paths.get(currentPath, "testset", "encrypted.txt").toString();
             String decryptedFromFile = aes.decryptFromFile(filePath);
             System.out.println("decrypted from file : ");
@@ -42,7 +41,6 @@ public class Main {
 
         try {
             // 평문 text 파일을 읽어서 암호화 하는 예시
-            String currentPath = of.toAbsolutePath().toString();
             String filePath = Paths.get(currentPath, "testset", "plainData.txt").toString();
             String encryptedFromFile = aes.encryptFromFile(filePath);
             System.out.println("encrypted from file : ");
