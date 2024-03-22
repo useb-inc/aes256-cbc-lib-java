@@ -34,10 +34,31 @@ aes_key, aes_iv 입력 방법은 3가지 입니다.
 new AES256();
 ```
 
+1-1. 암호화키를 개발용과 운영용을 별도로 적용하는 경우
+```java
+/* 
+ AES256 객체 생성시 profile 인자에 "DEV" 또는 "PROD"를 지정하여 개발용 암호화키와 운영용 암호화키를 선택할 수 있습니다.
+ 미지정시에는 default로 profile이 "DEV"로 지정되며 개발용 암호화키를 사용합니다. 
+*/
+new AES256("DEV");      // 개발용 암호화키 사용
+new AES256();           // 미지정시 개발용 암호화키 사용
+        
+// 운영용 암호화키 사용
+new AES256("PROD");     // 운영용 암호화키 사용
+
+/*
+ 환경변수로 ALCHERA_AES256_KEY 값을 "PROD"로 지정하는 경우, 
+ new AES256() 생성자를 사용하더라도 운영키가 사용됩니다.
+*/
+
+$ export ALCHERA_AES256_PROFILE=PROD      // shell 에서 환경변수 셋팅
+new AES256()               // 환경변수 셋팅된 경우 기본 생성자를 사용하더라도 운영용 암호화키 사용
+```
+
 2. key와 iv를 환경 변수로 전달하여 사용하는 방법
 ```java
 /* 
- AES256 객체 생성하기 전에 환경변수에 aes_key, aes_iv 값을 셋팅하시고 제목 없는 문서
+ AES256 객체 생성하기 전에 환경변수에 ALCHERA_AES256_KEY, ALCHERA_AES256_IV 값을 셋팅하시고 제목 없는 문서
  default 생성자로 객체를 생성하여서 사용하시면 됩니다.
 */
 new AES256();
