@@ -58,7 +58,7 @@ new AES256()               // 환경변수 셋팅된 경우 기본 생성자를 
 2. key와 iv를 환경 변수로 전달하여 사용하는 방법
 ```java
 /* 
- AES256 객체 생성하기 전에 환경변수에 ALCHERA_AES256_KEY, ALCHERA_AES256_IV 값을 셋팅하시고 제목 없는 문서
+ AES256 객체 생성하기 전에 환경변수에 ALCHERA_AES256_KEY, ALCHERA_AES256_IV 값을 셋팅하시고 
  default 생성자로 객체를 생성하여서 사용하시면 됩니다.
 */
 new AES256();
