@@ -1,2 +1,3 @@
 testset/**/output-*.txt
 Main.class
+.idea/
