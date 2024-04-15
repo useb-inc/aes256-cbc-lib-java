@@ -81,13 +81,43 @@ AES256 알고리즘을 이용하여 암호화한 문자열을 복호화하여 �
 ```java
 String decrypted = AES256.decrypt("복호화할 문자열");
 ```
+#### encryptFromFile
+평문 파일 경로를 입력받아 암호화하여 반환하는 함수
+```java
+String encrypted = AES256.encryptFromFile("파일 경로");
+```
 #### decryptFromFile
 암호화한 문자열파일 경로를 입력받아 복호화하여 반환하는 함수
 ```java
 String decrypted = AES256.decryptFromFile("파일 경로");
 ```
-#### encryptFromFile
-평문 파일 경로를 입력받아 암호화하여 반환하는 함수
+#### encryptStringToBytes
+문자열을 AES256 알고리즘을 이용하여 암호화한 바이트 배열을 반환하는 함수
 ```java
-String encrypted = AES256.encryptFromFile("파일 경로");
+byte[] encryptedBytes = AES256.encryptStringToBytes("암호화할 문자열");
+```
+#### decryptStringToBytes
+AES256 알고리즘을 이용하여 암호화한 문자열을 복호화한 바이트 배열을 반환하는 함수
+```java
+byte[] decryptedBytes = AES256.decryptStringToBytes("복호화할 문자열");
+```
+#### encryptBytesToString
+바이트 배열을 AES256 알고리즘을 이용하여 암호화한 문자열을 반환하는 함수
+```java
+String encrypted = AES256.encryptBytesToString(암호화할 바이트 배열);
+```
+#### decryptBytesToString
+AES256 알고리즘을 이용하여 암호화한 바이트 배열을 복호화한 문자열을 반환하는 함수
+```java
+String decrypted = AES256.decryptBytesToString(복호화할 바이트 배열);
+```
+#### encryptByteArray
+바이트 배열을 AES256 알고리즘을 이용하여 암호화한 바이트 배열을 반환하는 함수
+```java
+byte[] encryptedBytes = AES256.encryptByteArray(암호화할 바이트 배열);
+```
+#### decryptByteArray
+AES256 알고리즘을 이용하여 암호화한 바이트 배열을 복호화한 바이트 배열을 반환하는 함수
+```java
+byte[] decryptedBytes = AES256.decryptByteArray(암호화할 바이트 배열);
 ```
