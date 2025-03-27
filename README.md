@@ -69,6 +69,12 @@ new AES256();
 new AES256("aes_key", "aes_iv");
 ```
 
+4. byte[] (image) 를 생성자 인자로 전달하여 사용하는 방법
+```java
+byte[] image = Files.readAllBytes(Path.of("/example/image/path/sample.jpg"));
+new AES256(image);
+```
+
 
 ### Method 사용법
 #### encrypt
